@@ -11,7 +11,7 @@
         </div> -->
 
         <!-- Desktop Nav -->
-        <nav class="hidden md:flex">
+        <nav class="hidden md:flex" style="margin-right: 50px">
           <router-link
             v-for="link in navLinks"
             :key="link.path"
@@ -21,6 +21,8 @@
             {{ link.label }}
           </router-link>
         </nav>
+
+        <button class="button">Контакти</button>
 
         <!-- MOBILE VIEW -->
 

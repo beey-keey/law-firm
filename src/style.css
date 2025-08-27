@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-.font-brand {
-  font-family: "Cormorant Garamond", serif;
-} */
-
 .top-bar {
   align-items: center;
   display: flex;
@@ -34,11 +27,26 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 1.25rem;
-  padding: 0.5rem 1rem; /* Add padding for wider hover area */
-  display: inline-block; /* Ensure the padding is applied properly */
+  padding: 0.5rem 1rem;
+  display: inline-block;
 }
 
 .menu-item:hover {
-  background-color: #f3f4f6; /* bg-gray-200 */
+  background-color: #f3f4f6;
   border-radius: 0rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: #93c5fd;
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
