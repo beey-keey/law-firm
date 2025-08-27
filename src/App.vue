@@ -1,33 +1,28 @@
 <template>
-  <div
-    class="min-h-screen bg-gradient-to-br from-lime-50 to-emerald-100 text-gray-800"
-  >
-    <header class="bg-white shadow-md">
+  <div class="min-h-screen bg-gradient-to-br to-emerald-100 text-gray-800">
+    <header class="top-bar">
       <div
         class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"
       >
         <!-- Logo & Title -->
-        <div class="flex items-center space-x-3">
+        <!-- <div class="flex items-center space-x-3">
           <img src="/favicon.png" alt="Law firm Logo" class="h-8 w-8" />
           <h1 class="font-brand text-2xl text-emerald-600">Law firm</h1>
-        </div>
+        </div> -->
 
         <!-- Desktop Nav -->
-        <nav class="hidden space-x-4 text-lg font-semibold md:flex">
+        <nav class="hidden md:flex">
           <router-link
             v-for="link in navLinks"
             :key="link.path"
             :to="link.path"
-            class="text-xl font-semibold hover:underline"
-            :class="
-              $route.path === link.path
-                ? 'text-emerald-600 underline'
-                : 'text-green-800'
-            "
+            class="menu-item"
           >
             {{ link.label }}
           </router-link>
         </nav>
+
+        <!-- MOBILE VIEW -->
 
         <!-- Mobile button -->
         <button
@@ -51,7 +46,6 @@
           </svg>
         </button>
       </div>
-
       <!-- Mobile menu -->
       <div
         v-if="showMenu"
@@ -72,7 +66,42 @@
           {{ link.label }}
         </router-link>
       </div>
+
+      <!-- MOBILE VIEW END -->
     </header>
+
+    <!-- Full-width hero image -->
+    <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+      <img
+        src="/law-firm.webp"
+        alt="Law Firm"
+        class="w-full h-64 md:h-80 lg:h-96 xl:h-[500px] 2xl:h-[600px] object-cover"
+      />
+    </div>
+
+    <div
+      class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-64"
+    ></div>
+
+    <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+      <img
+        src="/1.png"
+        alt="Law Firm"
+        class="w-full h-64 md:h-80 lg:h-96 xl:h-[500px] 2xl:h-[600px] object-cover"
+      />
+    </div>
+
+    <div
+      class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-64"
+    ></div>
+
+    <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+      <img
+        src="/2.png"
+        alt="Law Firm"
+        class="w-full h-64 md:h-80 lg:h-96 xl:h-[500px] 2xl:h-[600px] object-cover"
+      />
+    </div>
 
     <main class="p-6">
       <!-- <LoginScreen v-if="$route.path === '/login'" /> -->
@@ -89,7 +118,14 @@ import { ref } from "vue";
 
 const showMenu = ref(false);
 
-const navLinks = [{ path: "/", label: "Начало" }];
+const navLinks = [
+  { path: "/about", label: "За нас" },
+  { path: "/services", label: "Услуги" },
+  { path: "/", label: "Екип" },
+  { path: "/contact", label: "Статии" },
+  { path: "/contact", label: "Проекти" },
+  { path: "/contact", label: "Партньори" },
+];
 
 const activeTab = ref("home");
 </script>
