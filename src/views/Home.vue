@@ -1,93 +1,54 @@
-<template></template>
+<template>
+  <!-- Full-width hero image -->
+  <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+    <img
+      src="/law-firm.webp"
+      alt="Law Firm"
+      class="w-full h-64 md:h-80 lg:h-96 xl:h-[500px] 2xl:h-[600px] object-cover"
+    />
+  </div>
+
+  <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-105">
+    <HeroCard />
+  </div>
+
+  <div
+    class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-cover bg-center"
+    :style="{ backgroundImage: `url('/1.png')` }"
+  >
+    <!-- Dark overlay for better text contrast -->
+    <div class="absolute inset-0 bg-black/30"></div>
+
+    <!-- Content area -->
+    <div class="relative z-10 py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4 md:px-6">
+        <CorporateClients />
+      </div>
+    </div>
+  </div>
+  <div
+    class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-64"
+  ></div>
+
+  <div
+    class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-cover bg-center"
+    :style="{ backgroundImage: `url('/2.png')` }"
+  >
+    <!-- Dark overlay for better text contrast -->
+    <div class="absolute inset-0 bg-black/30"></div>
+
+    <!-- Content area -->
+    <div class="relative z-10 py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4 md:px-6">
+        <IndividualClients />
+      </div>
+    </div>
+  </div>
+</template>
 
 <script setup lang="ts">
-import router from "@/router/router";
-import { ref } from "vue";
-const baseUrl = import.meta.env.BASE_URL;
+import HeroCard from "./HeroCard.vue";
 
-const cards = [
-  {
-    title: "💡 Основна идея и концепция",
-    description:
-      "Споделяне на личен опит със здравословен режим, без да се дава медицински съвет.",
-    image: "/banner.png",
-  },
-  {
-    title: "🌱 Каква е целта на сайта?",
-    description: "Да вдъхновя други хора чрез моя опит.",
-    image: "/banner2.png",
-  },
-  {
-    title: "🤸🏻‍♀️ За кого е този сайт?",
-    description:
-      "За хора, които търсят баланс, вдъхновение и реален пример – не диета.",
-    image: "/banner3.png",
-  },
-  {
-    title: "‼️ Какво НЕ е този сайт?",
-    description:
-      "Това не е медицински блог или диетичен план. Всичко е личен пример.",
-    image: "/banner4.png",
-  },
-  {
-    title: "🤩 Какво ще намериш тук?",
-    description:
-      "Моите дневници, рецепти, хранителни схеми, трикове за баланс и вдъхновение.",
-    image: "/banner5.png",
-  },
-];
-
-const openPrinciples = () => {
-  router.push("/principles");
-};
-
-function generateLeafStyle(index: number) {
-  const left = Math.random() * 100;
-  const top = Math.random() * 100;
-  const delay = 0.3 * index;
-  const size = 40 + Math.random() * 30;
-
-  return {
-    left: `${left}%`,
-    top: `${top}%`,
-    width: `${size}px`,
-    animationDelay: `${delay}s`,
-    transform: "rotate(0deg)",
-  };
-}
+import CorporateClients from "./CorporateClients.vue";
+import IndividualClients from "./IndividualClients.vue";
 </script>
-
-<style scoped>
-.home-view {
-  animation: fade-in 0.6s ease-out;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out both;
-}
-
-@keyframes bg-fade {
-  0%,
-  100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 0.2;
-  }
-}
-
-.animate-bg-fade {
-  animation: bg-fade 10s ease-in-out infinite;
-}
-</style>

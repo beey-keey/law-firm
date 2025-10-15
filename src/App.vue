@@ -5,13 +5,12 @@
         class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"
       >
         <!-- Logo & Title -->
-        <!-- <div class="flex items-center space-x-3">
-          <img src="/favicon.png" alt="Law firm Logo" class="h-8 w-8" />
-          <h1 class="font-brand text-2xl text-emerald-600">Law firm</h1>
-        </div> -->
-
+        <div @click="openHome()">
+          <img src="/favicon1.jpg" alt="Law firm Logo" class="h-20 w-50" />
+          <!-- <h1 class="font-brand text-2xl text-emerald-600">Law firm</h1> -->
+        </div>
         <!-- Desktop Nav -->
-        <nav class="hidden md:flex" style="margin-right: 50px">
+        <nav class="hidden md:flex" style="margin-left: 100px">
           <router-link
             v-for="link in navLinks"
             :key="link.path"
@@ -22,7 +21,7 @@
           </router-link>
         </nav>
 
-        <button class="button">Контакти</button>
+        <button style="margin-left: 100px" class="button">Контакти</button>
 
         <!-- MOBILE VIEW -->
 
@@ -72,57 +71,7 @@
       <!-- MOBILE VIEW END -->
     </header>
 
-    <!-- Full-width hero image -->
-    <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-      <img
-        src="/law-firm.webp"
-        alt="Law Firm"
-        class="w-full h-64 md:h-80 lg:h-96 xl:h-[500px] 2xl:h-[600px] object-cover"
-      />
-    </div>
-
-    <div
-      class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-105"
-    >
-      <HeroCard />
-    </div>
-
-    <div
-      class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-cover bg-center"
-      style="background-image: url(&quot;/1.png&quot;)"
-    >
-      <!-- Dark overlay for better text contrast -->
-      <div class="absolute inset-0 bg-black/30"></div>
-
-      <!-- Content area -->
-      <div class="relative z-10 py-16 md:py-24">
-        <div class="max-w-6xl mx-auto px-4 md:px-6">
-          <CorporateClients />
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-64"
-    ></div>
-
-    <div
-      class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-cover bg-center"
-      style="background-image: url(&quot;/2.png&quot;)"
-    >
-      <!-- Dark overlay for better text contrast -->
-      <div class="absolute inset-0 bg-black/30"></div>
-
-      <!-- Content area -->
-      <div class="relative z-10 py-16 md:py-24">
-        <div class="max-w-6xl mx-auto px-4 md:px-6">
-          <IndividualClients />
-        </div>
-      </div>
-    </div>
-
     <main class="p-6">
-      <!-- <LoginScreen v-if="$route.path === '/login'" /> -->
       <router-view />
       <footer class="mt-10 text-center text-sm text-gray-600">
         <!-- <p>&copy; 2025 Law firm.</p> -->
@@ -133,22 +82,22 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import HeroCard from "./views/HeroCard.vue";
-import CorporateClients from "./views/CorporateClients.vue";
-import IndividualClients from "./views/IndividualClients.vue";
-
 const showMenu = ref(false);
 
 const navLinks = [
   { path: "/about", label: "За нас" },
   { path: "/services", label: "Услуги" },
-  { path: "/", label: "Екип" },
-  { path: "/contact", label: "Статии" },
-  { path: "/contact", label: "Проекти" },
-  { path: "/contact", label: "Партньори" },
+  { path: "/team", label: "Екип" },
+  { path: "/articles", label: "Статии" },
+  { path: "/projects", label: "Проекти" },
+  { path: "/partners", label: "Партньори" },
 ];
 
 const activeTab = ref("home");
+
+function openHome() {
+  window.location.href = "/";
+}
 </script>
 
 <style>
@@ -159,18 +108,4 @@ const activeTab = ref("home");
 }
 </style>
 
-<style>
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out;
-}
-</style>
+<style></style>
