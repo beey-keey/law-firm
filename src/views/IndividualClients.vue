@@ -43,7 +43,7 @@
           </p>
 
           <!-- arrow -->
-          <router-link
+          <!-- <router-link
             :to="item.href"
             class="mt-5 inline-flex items-center gap-2 text-sky-300 font-semibold"
           >
@@ -55,7 +55,7 @@
               aria-hidden="true"
               >→</span
             >
-          </router-link>
+          </router-link> -->
         </article>
       </div>
     </div>

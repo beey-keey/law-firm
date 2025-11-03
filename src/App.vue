@@ -21,7 +21,13 @@
           </router-link>
         </nav>
 
-        <button style="margin-left: 100px" class="button">Контакти</button>
+        <button
+          @click="openContactUs()"
+          style="margin-left: 100px"
+          class="button"
+        >
+          Контакти
+        </button>
 
         <!-- MOBILE VIEW -->
 
@@ -88,15 +94,19 @@ const navLinks = [
   { path: "/about", label: "За нас" },
   { path: "/services", label: "Услуги" },
   { path: "/team", label: "Екип" },
-  { path: "/articles", label: "Статии" },
-  { path: "/projects", label: "Проекти" },
-  { path: "/partners", label: "Партньори" },
+  // { path: "/articles", label: "Статии" },
+  // { path: "/projects", label: "Проекти" },
+  // { path: "/partners", label: "Партньори" },
 ];
 
 const activeTab = ref("home");
 
 function openHome() {
   window.location.href = "/";
+}
+
+function openContactUs() {
+  window.location.href = "contact";
 }
 </script>
 

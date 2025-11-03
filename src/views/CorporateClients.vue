@@ -22,9 +22,9 @@
           class="group relative rounded-2xl bg-white shadow-[0_10px_30px_rgba(0,0,0,0.06)] border border-slate-200 p-6 md:p-7 hover:-translate-y-1 transition-transform"
         >
           <!-- top accent line -->
-          <span
+          <!-- <span
             class="absolute inset-x-0 -top-px h-1 rounded-t-2xl bg-slate-100"
-          ></span>
+          ></span> -->
 
           <!-- icon -->
           <div
@@ -41,7 +41,7 @@
           </p>
 
           <!-- arrow link -->
-          <router-link
+          <!-- <router-link
             :to="item.href"
             class="mt-4 inline-flex items-center gap-2 text-slate-900 font-semibold"
           >
@@ -54,7 +54,7 @@
             >
               →
             </span>
-          </router-link>
+          </router-link> -->
         </article>
       </div>
     </div>

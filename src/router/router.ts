@@ -7,6 +7,8 @@ import Partners from "../views/partners/Partners.vue";
 import Projects from "../views/projects/Projects.vue";
 import Services from "../views/services/Services.vue";
 import Team from "../views/team/Team.vue";
+import Contact from "../views/contact/Contact.vue";
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -42,6 +44,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/team",
     name: "Team",
     component: Team,
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: Contact,
   },
 ];
 
