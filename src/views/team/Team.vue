@@ -164,7 +164,7 @@
               </div>
 
               <!-- Бутон към подробен профил (по избор) -->
-              <div class="mt-5">
+              <!-- <div class="mt-5">
                 <a
                   :href="m.profileUrl || '/contact'"
                   class="inline-flex items-center gap-2 rounded-full bg-white shadow ring-1 ring-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition"
@@ -172,7 +172,7 @@
                   Пълен профил
                   <ArrowRightIcon class="h-4 w-4" />
                 </a>
-              </div>
+              </div> -->
             </div>
           </article>
         </div>
@@ -195,7 +195,7 @@
               действие.
             </p>
             <a
-              href="/law-firm/contact"
+              href="/contact"
               class="mt-4 inline-flex items-center gap-2 rounded-full bg-white text-slate-900 px-4 py-2 text-sm font-medium hover:bg-slate-100 transition"
             >
               Свържете се с нас

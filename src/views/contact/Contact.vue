@@ -52,7 +52,7 @@
           <div class="mt-6 space-y-2 text-sm text-slate-700">
             <div class="flex items-center gap-2">
               <PhoneIcon class="h-4 w-4 text-slate-800" />
-              <a href="tel:+0888007572" class="hover:underline"
+              <a href="tel:+359888007572" class="hover:underline"
                 >+359 888 007 572</a
               >
             </div>

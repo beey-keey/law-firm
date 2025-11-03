@@ -29,6 +29,7 @@
           <div class="mt-4">
             <button
               type="button"
+              @click="openTeam()"
               class="inline-flex items-center gap-2 rounded-full bg-white shadow ring-1 ring-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition"
             >
               Запознайте се с екипа
@@ -161,6 +162,10 @@ const strengths = [
   "<strong>Върху принципи и морал</strong> – ценности, които ни направляват.",
   "<strong>Вървим напред с мисъл за природата</strong> – устойчиво развитие и отговорност.",
 ];
+
+function openTeam() {
+  window.location.href = "/team";
+}
 </script>
 
 <!-- малък компонент за чек икона -->

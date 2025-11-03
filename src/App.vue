@@ -57,17 +57,17 @@
       </div>
     </header>
 
-    <main class="p-6">
+    <main class="">
       <router-view />
-      <footer class="mt-10 text-center text-sm text-gray-600">
-        <!-- <p>&copy; 2025 Law firm.</p> -->
-      </footer>
+      <Footer />
+      <!-- <footer class="footer">© 2025 Вашата адвокатска кантора</footer> -->
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useRouter, useRoute } from "vue-router";
+import Footer from "./views/Footer.vue";
 const router = useRouter();
 const route = useRoute();
 
@@ -85,3 +85,15 @@ function openContactUs() {
   router.push("/contact");
 }
 </script>
+
+<!-- <style>
+.footer {
+  /* махнете position: fixed */
+  width: 100%;
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  z-index: 100;
+}
+</style> -->
