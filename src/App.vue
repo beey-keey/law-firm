@@ -7,39 +7,41 @@
         <!-- Logo & Title -->
         <div @click="openHome()" style="cursor: pointer">
           <img src="/favicon1.jpg" alt="Law firm Logo" class="h-20 w-50" />
-          <!-- <h1 class="font-brand text-2xl text-emerald-600">Law firm</h1> -->
         </div>
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex" style="margin-left: 100px">
+        <!-- Nav Tabs: column on mobile, row on desktop -->
+        <nav
+          class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6"
+        >
           <router-link
             v-for="link in navLinks"
             :key="link.path"
             :to="link.path"
-            class="menu-item"
+            class="menu-item text-base"
+            :class="
+              $route.path === link.path
+                ? 'text-emerald-600 underline'
+                : 'text-green-800'
+            "
           >
             {{ link.label }}
           </router-link>
         </nav>
-
+        <!-- Contact Button (desktop) -->
         <button
           @click="openContactUs()"
-          style="margin-left: 100px"
-          class="button"
+          class="ml-4 px-5 py-2 rounded-full bg-emerald-600 text-white text-base font-semibold shadow hover:bg-emerald-700 transition hidden md:block"
         >
           Контакти
         </button>
-
-        <!-- MOBILE VIEW -->
-
-        <!-- Mobile button -->
+        <!-- Contact Icon Button (mobile) -->
         <button
-          class="text-green-700 focus:outline-none md:hidden"
-          @click="showMenu = !showMenu"
-          aria-label="Toggle menu"
+          @click="openContactUs()"
+          class="ml-4 p-2 rounded-full hover:bg-emerald-100 focus:outline-none md:hidden"
+          aria-label="Контакти"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
+            class="h-7 w-7 text-emerald-600"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -48,33 +50,11 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
             />
           </svg>
         </button>
       </div>
-      <!-- Mobile menu -->
-      <div
-        v-if="showMenu"
-        class="space-y-2 px-6 pb-4 text-lg font-semibold md:hidden"
-      >
-        <router-link
-          v-for="link in navLinks"
-          :key="link.path"
-          :to="link.path"
-          class="block"
-          :class="
-            $route.path === link.path
-              ? 'text-emerald-600 underline'
-              : 'text-green-800'
-          "
-          @click="showMenu = false"
-        >
-          {{ link.label }}
-        </router-link>
-      </div>
-
-      <!-- MOBILE VIEW END -->
     </header>
 
     <main class="p-6">
@@ -87,35 +67,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-const showMenu = ref(false);
+import { useRouter, useRoute } from "vue-router";
+const router = useRouter();
+const route = useRoute();
 
 const navLinks = [
   { path: "/about", label: "За нас" },
   { path: "/services", label: "Услуги" },
   { path: "/team", label: "Екип" },
-  // { path: "/articles", label: "Статии" },
-  // { path: "/projects", label: "Проекти" },
-  // { path: "/partners", label: "Партньори" },
 ];
 
-const activeTab = ref("home");
-
 function openHome() {
-  window.location.href = "/";
+  router.push("/");
 }
 
 function openContactUs() {
-  window.location.href = "contact";
+  router.push("/contact");
 }
 </script>
-
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap");
-
-.font-brand {
-  font-family: "Cormorant Garamond", serif;
-}
-</style>
-
-<style></style>
