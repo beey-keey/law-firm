@@ -1,7 +1,18 @@
 <!doctype html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0;" />
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      // Пренасочване към root, като запазим пътя
+      var redirect =
+        window.location.protocol +
+        "//" +
+        window.location.host +
+        "/#" +
+        window.location.pathname;
+      window.location.replace(redirect);
+    </script>
   </head>
   <body>
     <p>Redirecting...</p>
