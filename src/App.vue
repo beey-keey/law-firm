@@ -5,7 +5,7 @@
         class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"
       >
         <!-- Logo & Title -->
-        <div @click="openHome()">
+        <div @click="openHome()" style="cursor: pointer">
           <img src="/favicon1.jpg" alt="Law firm Logo" class="h-20 w-50" />
           <!-- <h1 class="font-brand text-2xl text-emerald-600">Law firm</h1> -->
         </div>

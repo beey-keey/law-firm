@@ -14,7 +14,7 @@
 
   <div
     class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-cover bg-center"
-    :style="{ backgroundImage: `url('/1.png')` }"
+    :style="{ backgroundImage: `url('/law-firm/1.png')` }"
   >
     <!-- Dark overlay for better text contrast -->
     <div class="absolute inset-0 bg-black/30"></div>
@@ -32,7 +32,7 @@
 
   <div
     class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-cover bg-center"
-    :style="{ backgroundImage: `url('/2.png')` }"
+    :style="{ backgroundImage: `url('/law-firm/2.png')` }"
   >
     <!-- Dark overlay for better text contrast -->
     <div class="absolute inset-0 bg-black/30"></div>
