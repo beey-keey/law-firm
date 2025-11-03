@@ -23,7 +23,7 @@
           </p>
 
           <div class="mt-6 flex items-center gap-3">
-            <a
+            <!-- <a
               href="#services"
               class="inline-flex items-center gap-2 rounded-full bg-slate-900 text-white px-4 py-2 text-sm font-medium hover:bg-black transition"
             >
@@ -42,9 +42,9 @@
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-            </a>
+            </a> -->
             <a
-              href="/contact"
+              href="contact"
               class="inline-flex items-center gap-2 rounded-full bg-white shadow ring-1 ring-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition"
             >
               Свържете се с нас
