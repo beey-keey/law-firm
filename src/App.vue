@@ -102,11 +102,11 @@ const navLinks = [
 const activeTab = ref("home");
 
 function openHome() {
-  window.location.href = "/";
+  window.location.href = "/law-firm/";
 }
 
 function openContactUs() {
-  window.location.href = "contact";
+  window.location.href = "/law-firm/contact";
 }
 </script>
 
