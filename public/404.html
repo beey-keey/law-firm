@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <title>404 - Not Found</title>
     <script>
-      // SPA fallback: redirect all 404s to index.html, preserving path
-      var redirectTo = "/index.html" + location.search + location.hash;
+      // SPA fallback: redirect all 404s to root, preserving path
+      var redirectTo = "/" + location.search + location.hash;
       window.location.replace(redirectTo);
     </script>
   </head>
